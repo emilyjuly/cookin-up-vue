@@ -1,6 +1,6 @@
 <script lang="ts">
 import Tag from "@/components/Tag.vue";
-import type {PropType} from "vue";
+import type { PropType } from "vue";
 import type IIngrediente from "@/interfaces/IIngrediente";
 
 export default {
@@ -14,8 +14,8 @@ export default {
 <template>
     <section>
         <span class="subtitulo-lg sua-lista-texto">
-                Sua lista:
-            </span>
+            Sua lista:
+        </span>
 
         <ul v-if="ingredientes.length" class="ingredientes-sua-lista">
             <li v-for="item in ingredientes" :key="ingrediente" class="ingrediente">
@@ -25,7 +25,7 @@ export default {
 
         <p v-else class="paragrafo lista-vazia">
             <img src="../assets/images/icones/lista-vazia.svg" alt="Ícone de pesquisa">
-            Sua lista está vazia, selecione ingredientes para iniciar.
+            Sua lista está vazia, selecione ingredientes.
         </p>
     </section>
 </template>

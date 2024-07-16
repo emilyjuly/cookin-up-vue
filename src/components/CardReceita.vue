@@ -5,6 +5,11 @@ import type { PropType } from 'vue';
 export default {
     props: {
         receita: { type: Object as PropType<IReceita>, required: true }
+    },
+    data() {
+        return {
+            showIngredientes: false
+        }
     }
 }
 </script>
@@ -19,6 +24,10 @@ export default {
             <h2 class="paragrafo receita__nome">
                 {{ receita.nome }}
             </h2>
+            <button class="mostrar-btn" @click="showIngredientes = !showIngredientes">{{ showIngredientes ? 'Ocultar' : 'Mostrar' }} ingredientes <img :class="{ 'botao-icone-top': showIngredientes, 'botao-icone-baixo': !showIngredientes }" src="/imagens/icones/botoes/down.png" /></button>
+            <lu v-if="showIngredientes" v-for="ingrediente in receita.ingredientes">
+                <li>{{ ingrediente }}</li>
+            </lu>
         </section>
     </article>
 </template>
@@ -38,6 +47,27 @@ export default {
 
 .receita__corpo {
     padding: 2rem 1rem;
+}
+
+.mostrar-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #E65600;
+    cursor: pointer;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+}
+
+.botao-icone-baixo {
+    width: 14px;
+    transition: transform 0.3s;
+}
+
+.botao-icone-top {
+    width: 14px;
+    transform: rotate(180deg);
+    transition: transform 0.3s;
 }
 
 .receita__imagem {

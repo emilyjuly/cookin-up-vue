@@ -1,11 +1,11 @@
 <script lang="ts">
-import {obterCategorias} from "@/http";
+import { obterCategorias } from "@/http";
 import type ICategoria from "@/interfaces/ICategoria";
 import CardCategoria from "@/components/CardCategoria.vue";
 
 export default {
     name: 'SelecionarIngredientes',
-    components: {CardCategoria},
+    components: { CardCategoria },
     data() {
         return {
             categorias: [] as ICategoria[]
@@ -46,7 +46,7 @@ export default {
 }
 
 .titulo-ingredientes {
-    color: var(--verde-medio, #3D6D4A);
+    color: #263238;
     display: block;
     margin-bottom: 1.5rem;
 }

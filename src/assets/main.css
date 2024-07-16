@@ -1,13 +1,11 @@
 :root {
-  --ocre: #D1451E;
-  --coral: #F0633C;
-  --coral-claro: #FFDBD1;
-  --creme: #FFFAF3;
-  --verde-escuro: #263A29;
-  --verde-medio: #3D6D4A;
+  --ocre: #d1451e;
+  --coral: #f0633c;
+  --coral-claro: #ffdbd1;
+  --creme: #fffaf3;
   --cinza: #444444;
-  --cinza-claro: #EFEFEF;
-  --branco: #FFF;
+  --cinza-claro: #efefef;
+  --branco: #fff;
 
   --font-family-padrao: Nunito Sans, sans-serif;
   --cabecalhos: Paytone One, sans-serif;
@@ -21,7 +19,8 @@
   padding: 0;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -38,7 +37,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  background: url('../assets/images/fundo-banner.png'), var(--verde-escuro, #263A29);
+  background: url('../assets/images/fundo-banner.png'), #ffdfcc;
 }
 
 .cabecalho-lg {

@@ -6,7 +6,7 @@ export default {
 
 <template>
     <footer class="rodape paragrafo">
-        Desenvolvido por Alura | 2023 - Projeto fictício sem fins comerciais.
+        Desenvolvido por Emily | 2024 - Projeto fictício sem fins comerciais.
     </footer>
 </template>
 
@@ -16,6 +16,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #263238;
 }
 
 @media only screen and (max-width: 1300px) {

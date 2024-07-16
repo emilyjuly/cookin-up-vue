@@ -1,15 +1,16 @@
 <script lang="ts">
 import SelecionarIngredientes from "@/components/SelecionarIngredientes.vue";
-import {obterIngredientes} from "@/http";
+import { obterIngredientes } from "@/http";
 import Tag from "@/components/Tag.vue";
 import SuaLista from "@/components/SuaLista.vue";
 import BotaoPrincipal from "@/components/BotaoPrincipal.vue";
 import MostrarReceitas from "@/components/MostrarReceitas.vue";
+import MostrarTodasAsReceitas from "@/components/MostrarTodasAsReceitas.vue"
 
-type Pagina = 'SelecionarIngredientes' | 'MostrarReceitas'
+type Pagina = 'SelecionarIngredientes' | 'MostrarReceitas' | 'MostrarTodasAsReceitas'
 
 export default {
-    components: {MostrarReceitas, BotaoPrincipal, SuaLista, Tag, SelecionarIngredientes},
+    components: { MostrarReceitas, MostrarTodasAsReceitas, BotaoPrincipal, SuaLista, Tag, SelecionarIngredientes },
     data() {
         return {
             ingredientes: obterIngredientes().ingredientes,
@@ -32,18 +33,18 @@ export default {
 
 <template>
     <main class="conteudo-principal">
-        <SuaLista :ingredientes="ingredientes"/>
-
+        <SuaLista :ingredientes="ingredientes" />
+        <div class="btns-container">
+            <BotaoPrincipal texto="Buscar receitas" @click="navegar('MostrarReceitas')" v-if="conteudo === 'SelecionarIngredientes' && ingredientes.length > 0" />
+            <BotaoPrincipal texto="Ver todas as receitas" @click="navegar('MostrarTodasAsReceitas')" v-if="conteudo === 'SelecionarIngredientes'" />
+        </div>
         <KeepAlive include="SelecionarIngredientes">
-            <SelecionarIngredientes
-                v-if="conteudo === 'SelecionarIngredientes'"
-                @remover-ingrediente="removerIngrediente($event)"
-                @adicionar-ingrediente="adicionarIngrediente($event)"/>
+            <SelecionarIngredientes v-if="conteudo === 'SelecionarIngredientes'" @remover-ingrediente="removerIngrediente($event)" @adicionar-ingrediente="adicionarIngrediente($event)" />
 
-            <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'" @editar-receitas="navegar('SelecionarIngredientes')" :ingredientes="ingredientes"/>
+            <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'" @editar-receitas="navegar('SelecionarIngredientes')" :ingredientes="ingredientes" />
+
+            <MostrarTodasAsReceitas v-else-if="conteudo === 'MostrarTodasAsReceitas'" @editar-receitas="navegar('SelecionarIngredientes')" />
         </KeepAlive>
-
-        <BotaoPrincipal texto="Buscar receitas!" @click="navegar('MostrarReceitas')" v-if="conteudo === 'SelecionarIngredientes'" />
     </main>
 </template>
 
@@ -58,6 +59,11 @@ export default {
     flex-direction: column;
     align-items: center;
     gap: 5rem;
+}
+
+.btns-container {
+    display: flex;
+    gap: 10rem;
 }
 
 @media only screen and (max-width: 1300px) {

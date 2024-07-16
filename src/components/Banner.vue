@@ -1,9 +1,8 @@
 <template>
     <header class="banner">
         <div class="apresentacao">
-            <img src="../assets/images/logo.svg" alt="logo do Cookin' up" class="logo">
             <p class="cabecalho-lg frase-cabecalho">
-                <span class="texto-verde">Um banquete de ideias para</span>
+                <span class="texto-laranja">Um banquete de ideias para</span>
                 despertar o chef que há em você!
             </p>
 
@@ -12,34 +11,26 @@
             </p>
         </div>
 
-        <img src="../assets/images/foto-banner.png"
-             alt="Foto de uma mulher cozinhando com uma bacia de vidro nas maãos. Ela está sorrindo e está apoiando um celular entre seu rosto e ombro."
-             class="foto-banner">
+        <img src="../assets/images/foto-banner.svg" alt="Um pote com frutas dentro." class="foto-banner">
     </header>
 </template>
 
 <style scoped>
 .banner {
     padding: 4rem 7.5rem;
-    color: var(--creme);
-
+    color: #263238;
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 3.25rem;
 }
 
-.logo {
-    height: 4.5rem;
-    margin-bottom: 3rem;
-}
-
 .frase-cabecalho {
     margin-bottom: 2rem;
 }
 
-.texto-verde {
-    color: var(--verde-medio, #3D6D4A);
+.texto-laranja {
+    color: #E65600;
 }
 
 .foto-banner {

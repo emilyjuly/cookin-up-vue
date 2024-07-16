@@ -1,11 +1,11 @@
 <script lang="ts">
-import type {PropType} from "vue";
+import type { PropType } from "vue";
 import type ICategoria from "@/interfaces/ICategoria";
 import Tag from "@/components/Tag.vue"
 import IngredienteSelecionavel from "@/components/IngredienteSelecionavel.vue";
 
 export default {
-    components: {IngredienteSelecionavel, Tag},
+    components: { IngredienteSelecionavel, Tag },
     props: {
         categoria: { type: Object as PropType<ICategoria>, required: true },
     },
@@ -51,12 +51,12 @@ export default {
 }
 
 .categoria__imagem {
-    width: 3.5rem;
+    width: 2.5rem;
 }
 
 .categoria__nome {
     text-align: center;
-    color: var(--verde-medio, #3D6D4A);
+    color: #263238;
     font-weight: 700;
 }
 
