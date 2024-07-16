@@ -1,4 +1,3 @@
 export default interface IIngrediente {
-    ingredientes: string[]
-
+  ingredientes: string[];
 }

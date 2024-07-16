@@ -1,7 +1,11 @@
 <script lang="ts">
+import type IIngrediente from '@/interfaces/IIngrediente';
+import type { PropType } from 'vue';
+
+
 export default {
     props: {
-        texto: { type: String, required: true },
+        texto: String,
         ativa: Boolean
     }
 }

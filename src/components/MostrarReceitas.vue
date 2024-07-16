@@ -1,15 +1,15 @@
 <script lang="ts">
-import {obterReceitas} from '@/http';
+import { obterReceitas } from '@/http';
 import type IReceita from '@/interfaces/IReceita';
 import BotaoPrincipal from './BotaoPrincipal.vue';
 import CardReceita from './CardReceita.vue';
-import type {PropType} from "vue";
+import type { PropType } from "vue";
 import type IIngrediente from "@/interfaces/IIngrediente";
-import {itensDeLista1EstaoEmLista2} from "@/operacoes/listas";
+import { itensDeLista1EstaoEmLista2 } from "@/operacoes/listas";
 
 export default {
     props: {
-        ingredientes: { type: Array as PropType<IIngrediente>, required: true }
+        ingredientes: Array
     },
     data() {
         return {
@@ -20,7 +20,7 @@ export default {
         const receitas = await obterReceitas();
 
         this.receitasEncontradas = receitas.filter((receita) => {
-            return itensDeLista1EstaoEmLista2(receita.ingredientes, this.ingredientes)
+            if (this.ingredientes) return itensDeLista1EstaoEmLista2(receita.ingredientes, this.ingredientes)
         });
     },
     components: { BotaoPrincipal, CardReceita },
@@ -53,8 +53,7 @@ export default {
                 Ops, não encontramos resultados para sua combinação. Vamos tentar de novo?
             </p>
 
-            <img src="../assets/images/sem-receitas.png"
-                 alt="Desenho de um ovo quebrado. A gema tem um rosto com uma expressão triste.">
+            <img src="../assets/images/sem-receitas.png" alt="Desenho de um ovo quebrado. A gema tem um rosto com uma expressão triste.">
         </div>
 
         <BotaoPrincipal texto="Editar lista" @click="$emit('editarReceitas')" />
