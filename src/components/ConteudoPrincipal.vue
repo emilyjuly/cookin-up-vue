@@ -78,5 +78,10 @@ export default {
         padding: 4rem 1.5rem;
         gap: 4rem;
     }
+
+    .btns-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 </style>
