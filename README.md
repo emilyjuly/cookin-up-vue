@@ -9,3 +9,8 @@ Uma página que consome ingredientes e receitas de um arquivo externo, permite q
 
 Além de usar um design responsivo e fazer requisições a URL externa.
 <a href="https://cookin-up-emilyjulys-projects.vercel.app/" target="_blank">Acesse clicando aqui </a>
+
+### Futuras funcionalidades
+- Pesquisa por receitas e ingredientes
+- Filtros em ingredientes
+- Retorno de receitas que o usuário não tem apenas 1 ingrediente, informando a ele que deverá buscar o ingrediente que falta
