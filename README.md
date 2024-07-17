@@ -1,10 +1,10 @@
 ## Cookin up
+![image](https://github.com/user-attachments/assets/27dffcec-9d80-481d-89d2-412b10c24d84)
 
-<code>Projeto destinado a prática do vue 3 com typescript.</code>
 
-<code>Uma lista de receitas baseada na sua lista de ingredientes disponíveis, consumindo um gist da web com receitas e ingredientes.</code>
+Uma página que consome ingredientes e receitas de um arquivo externo, permite que o usuário selecione os ingredientes que estão ao seu alcance e trás receitas que ele pode fazer usando esses ingredientes.Usa conceitos bases do framework Vue 3 como:
+- Props
+- Eventos
+- Componentização
 
-### Para executar
-Necessário possuir o Node instalado no equipamento.
-- Execute o comando npm install para instalar as dependências do projeto
-- Execute o comando npm run dev para executar o projeto em seu navegador de forma local.
+Além de usar um design responsivo e fazer requisições a URL externa.
