@@ -8,3 +8,4 @@ Uma página que consome ingredientes e receitas de um arquivo externo, permite q
 - Componentização
 
 Além de usar um design responsivo e fazer requisições a URL externa.
+<a href="https://cookin-up-emilyjulys-projects.vercel.app/" target="_blank">Acesse clicando aqui </a>
