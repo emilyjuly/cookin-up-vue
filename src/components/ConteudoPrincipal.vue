@@ -34,10 +34,7 @@ export default {
 <template>
     <main class="conteudo-principal">
         <SuaLista :ingredientes="ingredientes" />
-        <div class="btns-container">
-            <BotaoPrincipal texto="Buscar receitas" @click="navegar('MostrarReceitas')" v-if="conteudo === 'SelecionarIngredientes' && ingredientes.length > 0" />
-            <BotaoPrincipal texto="Ver todas as receitas" @click="navegar('MostrarTodasAsReceitas')" v-if="conteudo === 'SelecionarIngredientes'" />
-        </div>
+        <BotaoPrincipal texto="Buscar receitas" @click="navegar('MostrarReceitas')" v-if="conteudo === 'SelecionarIngredientes' && ingredientes.length > 0" />
         <KeepAlive include="SelecionarIngredientes">
             <SelecionarIngredientes v-if="conteudo === 'SelecionarIngredientes'" @remover-ingrediente="removerIngrediente($event)" @adicionar-ingrediente="adicionarIngrediente($event)" />
 
@@ -45,6 +42,7 @@ export default {
 
             <MostrarTodasAsReceitas v-else-if="conteudo === 'MostrarTodasAsReceitas'" @editar-receitas="navegar('SelecionarIngredientes')" />
         </KeepAlive>
+        <BotaoPrincipal texto="Ver todas as receitas" @click="navegar('MostrarTodasAsReceitas')" v-if="conteudo === 'SelecionarIngredientes'" />
     </main>
 </template>
 
@@ -61,11 +59,6 @@ export default {
     gap: 5rem;
 }
 
-.btns-container {
-    display: flex;
-    gap: 10rem;
-}
-
 @media only screen and (max-width: 1300px) {
     .conteudo-principal {
         padding: 5rem 3.75rem;
@@ -77,11 +70,6 @@ export default {
     .conteudo-principal {
         padding: 4rem 1.5rem;
         gap: 4rem;
-    }
-
-    .btns-container {
-        flex-direction: column;
-        gap: 20px;
     }
 }
 </style>
